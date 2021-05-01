@@ -1,0 +1,17 @@
+{
+  "baseDir": "./",
+  "includeNpm": true,
+  "layout": "dot",
+  "fileExtensions": ["js", "jsx", "ts", "tsx"],
+  "excludeRegExp": [],
+  "tsConfig": "tsconfig.json",
+  "fontName": "system-ui, -apple-system, sans-serif",
+  "fontSize": "13px",
+  "graphVizOptions": {
+    "G": { "pad": 1.0 }
+  },
+  "detectiveOptions": {
+    "es6": { "mixedImports": true, "skipTypeImports": true },
+    "ts": { "mixedImports": true, "skipTypeImports": true }
+  }
+}

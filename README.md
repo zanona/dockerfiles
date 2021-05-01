@@ -7,3 +7,4 @@ applications.
 - [jq](/jq)
 - [gh](/gh)
 - [e2e](/e2e)
+- [madge](/madge)
