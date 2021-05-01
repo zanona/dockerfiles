@@ -1,0 +1,26 @@
+--- a/node_modules/madge/lib/graph.js	1985-10-26 09:15:00.000000000 +0100
++++ b/node_modules/madge/lib/graph.js	2021-05-02 00:12:00.650398243 +0200
+@@ -96,7 +96,7 @@
+ 			nodes[depId] = nodes[depId] || g.addNode(depId);
+ 
+ 			if (!modules[depId]) {
+-				setNodeColor(nodes[depId], config.noDependencyColor);
++				setNodeColor(nodes[depId], 'gray');
+ 			}
+ 
+ 			g.addEdge(nodes[id], nodes[depId]);
+--- a/node_modules/madge/lib/tree.js	1985-10-26 09:15:00.000000000 +0100
++++ b/node_modules/madge/lib/tree.js	2021-05-02 00:17:24.043748282 +0200
+@@ -138,7 +138,11 @@
+ 					}
+
+ 					if (this.config.includeNpm && isNpmPath) {
+-						(npmPaths[traversedFilePath] = npmPaths[traversedFilePath] || []).push(dependencyFilePath);
++						const pkg = dependencyFilePath
++							.replace(/node_modules\/((?:@.+?\/)?.+?)\/.+/, '$1')
++							.replace('@types/', '')
++							.replace(/^(.+)__/, '@$1/');
++						(npmPaths[traversedFilePath] = npmPaths[traversedFilePath] || []).push(pkg);
+ 					}
+
+ 					return !isNpmPath && (dependencyFilterRes || dependencyFilterRes === undefined);
