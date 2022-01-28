@@ -8,3 +8,4 @@ applications.
 - [gh](/gh)
 - [e2e](/e2e)
 - [madge](/madge)
+- [firebase-tools](/firebase-tools)
